@@ -141,3 +141,8 @@ export const sidebarLinks = [
       chipBackgroundColor: "bg-inherit",
     },
   };
+
+  /**
+   * This value is used to store the session name of the logged in user.
+   */
+  export const sessionNameLoggedInUser = "auth-appwrite-session";

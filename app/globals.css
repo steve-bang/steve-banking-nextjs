@@ -280,7 +280,7 @@
   }
 
   .form-item {
-    @apply flex flex-col gap-1.5;
+    @apply flex flex-col gap-1.5 mt-0;
   }
 
   .form-label {

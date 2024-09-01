@@ -6,6 +6,7 @@ import React from 'react'
 import { sidebarLinks } from '@/constants/index'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
+import SidebarFooter from '@/components/SidebarFooter'
 
 const Sidebar = ({ user } : SidebarProps) => {
 
@@ -55,7 +56,7 @@ const Sidebar = ({ user } : SidebarProps) => {
                 })
             }
         </nav>
-        FOOTER
+        <SidebarFooter user={user} />
     </section>
   )
 }

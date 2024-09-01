@@ -1,11 +1,17 @@
 import HeaderBox from '@/components/HeaderBox'
 import RightSidebar from '@/components/RightSidebar'
 import TotalBalanceAccountBox from '@/components/TotalBalanceAccountBox'
+import { getLoggedInUser } from '@/lib/actions/user.action'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
-const HomePage = () => {
+const HomePage = async () => {
 
-  const userLoggedIn : User = { firstName: 'Steve', lastName: 'Bang', email: 'mrsteve.bang@gmail.com' }
+  const userLoggedIn = await getLoggedInUser();
+
+  if (!userLoggedIn) {
+    return redirect('/login');
+  }
 
   return (
     <section className="home">
@@ -14,7 +20,7 @@ const HomePage = () => {
           <HeaderBox 
             type='greeting'
             title='Welcome'
-            user= { userLoggedIn?.firstName || 'Guest' }
+            user= { userLoggedIn?.name || 'Guest' }
             subtext= 'Access your account balance, transfer funds, and more.'
           />
 
