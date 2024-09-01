@@ -82,7 +82,7 @@ declare interface CreditCardProps {
     banks: Bank[] & Account[];
   }
   
-  declare interface SiderbarProps {
+  declare interface SidebarProps {
     user: User;
   }
   
